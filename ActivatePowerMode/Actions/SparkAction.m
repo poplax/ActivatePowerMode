@@ -9,7 +9,7 @@
 #import "SparkAction.h"
 #import "ParticleView.h"
 
-NSInteger const MaxParticleCount = 100;
+NSInteger const MaxParticleCount = 25;
 
 @interface SparkAction ()
 
@@ -27,7 +27,8 @@ NSInteger const MaxParticleCount = 100;
 + (instancetype)sharedAction
 {
     static SparkAction *_sharedAction;
-    
+
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedAction = [[self alloc] init];
